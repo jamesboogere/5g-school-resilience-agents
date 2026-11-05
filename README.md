@@ -503,6 +503,28 @@ python src/knowledge_base/build_kb.py
 
 ---
 
+## 🔍 Standards Validation
+
+The project has been formally validated against all three official ITU reference sources. See [`docs/VALIDATION_REPORT.md`](docs/VALIDATION_REPORT.md) for the full report.
+
+| Source | Verdict | Key Finding |
+|---|---|---|
+| [ITU Sandbox Training Repo](https://github.com/CrashingGuru/Sandbox_Training/) | ✅ **Aligned** | Our RAG architecture mirrors the Sandbox telecom-rag-agent pattern; 3 of 4 Sandbox datasets ground our scenarios |
+| [ITU-T Y.3172](https://www.itu.int/rec/T-REC-Y.3172/en) | ✅ **Fully Compliant** | All 7 pipeline nodes (SRC→C→PP→M→P→D→SINK) satisfied with evidence |
+| [ITU AI Readiness 2.0](https://www.itu.int/dms_pub/itu-t/opb/ai4g/T-AI4G-AI4GOOD-2025-6-PDF-E.pdf) | ✅ **Aligned** | All 6 foundational factors and all 13 analytical dimensions addressed |
+
+See also: [`docs/AI_READINESS_SELF_ASSESSMENT.md`](docs/AI_READINESS_SELF_ASSESSMENT.md)
+
+### ITU Sandbox Datasets Used
+
+| Dataset | Used In | Purpose |
+|---|---|---|
+| [Crop Recommendation](https://github.com/CrashingGuru/Sandbox_Training/tree/main/datasets/crop-recommendation) (CC0-1.0, 2,200 rows) | Phase 4 — Agricultural IoT | Soil nutrient thresholds calibrate our 30% irrigation trigger |
+| [Radio Link Failure](https://github.com/CrashingGuru/Sandbox_Training/tree/main/datasets/radio-link-failure) (ITU 2021) | Phases 1–2 — Network | RLF KPI ranges calibrate our 5G telemetry thresholds (185ms, 12.3% packet loss) |
+| [TeleQnA](https://github.com/CrashingGuru/Sandbox_Training/tree/main/datasets/teleqna) (10,000 Q&A) | Policy Agent architecture | RAG retrieve/answer/refuse pattern mirrors our Policy Agent design |
+
+---
+
 ## ✅ Expected Outputs
 
 All deliverables specified in the Build-a-thon 5.0 brief are implemented:
@@ -517,6 +539,8 @@ All deliverables specified in the Build-a-thon 5.0 brief are implemented:
 - [x] **REST API** — full FastAPI interface with Swagger UI
 - [x] **Slide deck** — 10-slide HTML presentation (`docs/slides/presentation.html`)
 - [x] **Demo video script** — 4:35 min narrated walkthrough (`docs/DEMO_VIDEO_SCRIPT.md`)
+- [x] **Validation report** — validated against Y.3172, AI Readiness 2.0, and Sandbox (`docs/VALIDATION_REPORT.md`)
+- [x] **AI Readiness self-assessment** — full 13-dimension mapping (`docs/AI_READINESS_SELF_ASSESSMENT.md`)
 
 ---
 

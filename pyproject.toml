@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "5g-school-resilience-agents"
+version = "1.0.0"
+description = "5G-Enabled AI Agents for Resilient School Ecosystems — ITU AI for Good Build-a-thon 5.0"
+authors = [
+  { name = "James Boogere", email = "jboogere@gmail.com" },
+  { name = "Kasim Wasswa" },
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
